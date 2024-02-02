@@ -67,7 +67,10 @@ const getAllServices = (providers) => {
         });
         return services;
     }, []);
-    return allServices;
+
+    const sortedServices = allServices.sort((a, b) => a.localeCompare(b));
+    return sortedServices;
 };
+
 
 export default ServiceFilter;
