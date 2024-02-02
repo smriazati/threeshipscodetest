@@ -11,8 +11,8 @@ const ProviderSearch = ({ providers }) => {
     const [selectedDistance, setSelectedDistance] = useState(null);
 
     const handleStarCountChange = (event) => {
-        const value = event.target.value;
-        setSelectedStarCount(value === 'all' ? null : parseFloat(value));
+        const value = event.target?.value;
+        setSelectedStarCount(value === 'all' || value === null ? null : parseFloat(value));
     };
 
     const handleDistanceChange = (distance) => {
@@ -23,18 +23,28 @@ const ProviderSearch = ({ providers }) => {
         setSelectedServices(selectedServices);
     };
 
+
+    const resetFilters = () => {
+        setSelectedStarCount(null);
+        setSelectedServices([]);
+        setSelectedDistance(null);
+    };
+
     const filteredProviders = providers
         .filter((provider) => !selectedStarCount || provider.review_score >= selectedStarCount)
         .filter((provider) => selectedServices.length === 0 || selectedServices.every((service) => provider.services.includes(service)))
         .filter((provider) => !selectedDistance || provider.distance <= selectedDistance);
     return (
         <div>
-            <div className="filters">
-                <StarCountFilter selectedStarCount={selectedStarCount} onChange={handleStarCountChange} />
-                <ServiceFilter providers={providers} selectedServices={selectedServices} onChange={handleServiceChange} />
-                <DistanceFilter onChange={handleDistanceChange} />
+            <div className="mt-4 mb-8">
+                <div className="flex justify-end space-x-4 px-3">
+                    <StarCountFilter selectedStarCount={selectedStarCount} onChange={handleStarCountChange} />
+                    <ServiceFilter providers={providers} selectedServices={selectedServices} onChange={handleServiceChange} />
+                    <DistanceFilter onChange={handleDistanceChange} />
+                </div>
+
             </div>
-            <ProviderList providers={filteredProviders} />
+            <ProviderList providers={filteredProviders} onResetFilters={resetFilters} />
         </div>
     );
 };

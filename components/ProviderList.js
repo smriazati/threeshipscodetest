@@ -1,18 +1,23 @@
-import ServiceProvider from '../components/ServiceProvider';
+import ProviderCard from '../components/ProviderCard';
 
-const ProviderList = ({ providers }) => {
+const ProviderList = ({ providers, onResetFilters }) => {
     return (
         <div>
             {providers && providers.length > 0 ? (
-                <ul>
+                <ul className="space-y-4">
                     {providers.map((provider) => (
                         <li key={provider._id}>
-                            <ServiceProvider key={provider._id} provider={provider} />
+                            <ProviderCard key={provider._id} provider={provider} />
                         </li>
                     ))}
                 </ul>
             ) : (
-                <p>No provider available</p>
+                <div className='flex flex-col justify-center items-center'>
+                    <p className='mb-2'>No providers available</p>
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded uppercase" onClick={onResetFilters}>
+                        Reset filters
+                    </button>
+                </div>
             )}
         </div>
     );

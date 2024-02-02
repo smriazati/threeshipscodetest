@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Service Providers</h1>
+      <h1 className="hidden">Service Providers</h1>
       {loading ? (
         <p>Loading...</p>
       ) : (
