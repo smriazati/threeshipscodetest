@@ -37,7 +37,7 @@ const ProviderSearch = ({ providers }) => {
     return (
         <div>
             <div className="mt-4 mb-8">
-                <div className="flex justify-end space-x-4 px-3">
+                <div className="flex flex-wrap justify-end gap-y-4 space-x-4 px-3">
                     <StarCountFilter selectedStarCount={selectedStarCount} onChange={handleStarCountChange} />
                     <ServiceFilter providers={providers} selectedServices={selectedServices} onChange={handleServiceChange} />
                     <DistanceFilter onChange={handleDistanceChange} />

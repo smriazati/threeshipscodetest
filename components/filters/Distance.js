@@ -21,7 +21,7 @@ const DistanceFilter = ({ selectedDistance, onChange }) => {
             <button
                 className="border border-solid rounded border-gray-300 uppercase px-4 py-2 flex items-center font-bold text-gray-700"
             >
-                {distance === null || distance === 'all' ? 'Distance' : `${distance} miles`}
+                {distance === null || distance === undefined || distance === 'all' ? 'Distance' : `${distance} miles`}
                 <span className="ml-2 text-blue-500">
                     <FontAwesomeIcon icon={faAngleDown} className={`h-4 w-4 inline-block transform`} />
                 </span>

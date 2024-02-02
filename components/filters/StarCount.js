@@ -16,7 +16,7 @@ const StarCountFilter = ({ selectedStarCount, onChange }) => {
                 onClick={() => setListVisible(!listVisible)}
                 className="border border-solid rounded border-gray-300 uppercase px-4 py-2 flex items-center font-bold text-gray-700"
             >
-                {selectedStarCount !== null ? `${selectedStarCount} stars` : 'Star Rating'}
+                {selectedStarCount !== null ? `${selectedStarCount} star${selectedStarCount !== 1 ? 's' : ''}` : 'Star Rating'}
                 <span className="ml-2 text-blue-500">
                     <FontAwesomeIcon icon={faAngleDown} className={`h-4 w-4 inline-block transform ${listVisible ? 'rotate-180' : ''}`} />
                 </span>
@@ -29,7 +29,7 @@ const StarCountFilter = ({ selectedStarCount, onChange }) => {
                 <option value="all">All</option>
                 {starOptions.map((count) => (
                     <option key={count} value={count}>
-                        {count} stars
+                        {count} star{count !== 1 ? 's' : ''}
                     </option>
                 ))}
             </select>
