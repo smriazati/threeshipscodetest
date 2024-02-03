@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FilterButton from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -21,18 +22,17 @@ const ServiceFilter = ({ providers, selectedServices, onChange }) => {
 
     return (
         <div className="relative">
-            <button
-                onClick={() => setListVisible(!listVisible)}
-                className="border border-solid rounded border-gray-300 uppercase px-4 py-2 flex items-center font-bold text-gray-700"
-            >
-                Services Offered
-                <span className="ml-2 text-blue-500">
-                    <FontAwesomeIcon icon={faAngleDown} className={`h-4 w-4 inline-block transform ${listVisible ? 'rotate-180' : ''}`} />
-                </span>
-            </button>
+            <FilterButton onClick={() => setListVisible(!listVisible)} listVisible={listVisible} buttonText="Services Offered" />
             <div
-                className={`absolute top-30 ${listVisible ? 'block' : 'hidden'} bg-gray-50 rounded px-3 py-4`}
+                className={`absolute  z-10 top-30 ${listVisible ? 'block' : 'hidden'} bg-gray-50 rounded px-3 py-3`}
             >
+                <button
+                    onClick={handleClear}
+                    className="text-gray-600 mb-2 w-full text-right"
+                >
+                    Clear selection
+                </button>
+
                 {allServices.map((service) => (
                     <div key={service} className="flex items-center mb-2">
                         <input
@@ -47,12 +47,7 @@ const ServiceFilter = ({ providers, selectedServices, onChange }) => {
                     </div>
                 ))}
             </div>
-            {/* <button
-                onClick={handleClear}
-                className="absolute right-0 top-0 bg-blue-500 text-white px-2 py-1 rounded"
-            >
-                Clear
-            </button> */}
+
         </div>
 
     );

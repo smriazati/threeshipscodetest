@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 
-const StarRating = ({ rating }) => {
+const ProviderStarRating = ({ rating }) => {
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating - fullStars >= 0.5;
 
@@ -27,4 +27,4 @@ const StarRating = ({ rating }) => {
     );
 };
 
-export default StarRating;
+export default ProviderStarRating;

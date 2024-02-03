@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { fetchData } from '../lib/api';
 import ProviderSearch from '../components/ProviderSearch';
+import LoadingIcon from '../components/LoadingIcon';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -22,7 +23,7 @@ const Home = () => {
     <div>
       <h1 className="hidden">Service Providers</h1>
       {loading ? (
-        <p>Loading...</p>
+        <LoadingIcon />
       ) : (
         <ProviderSearch providers={data} />
       )}

@@ -1,7 +1,7 @@
 // pages/index.js (or your main component)
 import { useState } from 'react';
 import ProviderList from '../components/ProviderList';
-import StarCountFilter from '../components/filters/StarCount';
+import StarRatingFilter from '../components/filters/StarRating';
 import ServiceFilter from '../components/filters/Service';
 import DistanceFilter from '../components/filters/Distance';
 
@@ -38,7 +38,7 @@ const ProviderSearch = ({ providers }) => {
         <div>
             <div className="mt-4 mb-8">
                 <div className="flex flex-wrap justify-end gap-y-4 space-x-4 px-3">
-                    <StarCountFilter selectedStarCount={selectedStarCount} onChange={handleStarCountChange} />
+                    <StarRatingFilter selectedStarCount={selectedStarCount} onChange={handleStarCountChange} />
                     <ServiceFilter providers={providers} selectedServices={selectedServices} onChange={handleServiceChange} />
                     <DistanceFilter onChange={handleDistanceChange} />
                 </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FilterButton from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,30 +12,18 @@ const DistanceFilter = ({ selectedDistance, onChange }) => {
         onChange(value === 'all' ? null : parseFloat(value));
     };
 
-    const handleClear = () => {
-        setDistance('');
-        onChange(null);
-    };
+    const filterButtonText = distance === null || distance === '' || distance === 'all' ? 'Distance' : `${distance} mile${distance !== "1" ? 's' : ''}`
 
     return (
         <div className='relative'>
-            <button
-                className="border border-solid rounded border-gray-300 uppercase px-4 py-2 flex items-center font-bold text-gray-700"
-            >
-                {distance === null || distance === '' || distance === 'all' ? 'Distance' : `${distance} mile${distance !== "1" ? 's' : ''}`}
-                <span className="ml-2 text-blue-500">
-                    <FontAwesomeIcon icon={faAngleDown} className={`h-4 w-4 inline-block transform`} />
-                </span>
-            </button>
+            <FilterButton buttonText={filterButtonText} />
             <select value={distance} onChange={handleDistanceChange} className="absolute inset-0 opacity-0 cursor-pointer">
                 <option value="all">All</option>
-                <option value="1">1 mile</option>
                 <option value="5">5 miles</option>
                 <option value="10">10 miles</option>
+                <option value="50">50 miles</option>
+                <option value="100">100 miles</option>
             </select>
-            {/* <button onClick={handleClear} className="bg-red text-white px-4 py-2 mt-4">
-                Clear
-            </button> */}
         </div>
     );
 };

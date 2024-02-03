@@ -1,3 +1,19 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        color: #bdbdbd;
+    }
+
+    50% {
+        color: #6b7280;
+    }
+}
+
+.text-pulse {
+    animation: pulse 1s ease infinite alternate;
+}
