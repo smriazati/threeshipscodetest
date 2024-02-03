@@ -21,7 +21,7 @@ const ServiceProvider = ({ provider }) => {
                     <button className="ml-auto bg-blue-700 text-white px-2 sm:px-12 py-2 font-bold text-xl whitespace-nowrap">Get Quote</button>
                 </div>
                 <div>
-                    <h2 className="text-3xl font-bold mb-2">{provider.name} {provider.distance}</h2>
+                    <h2 className="text-3xl font-bold mb-2">{provider.name}</h2>
                     <div className="flex flex-wrap space-x-2 gap-y-2 mb-2">
                         <div className='flex flex-wrap space-x-1 gap-y-2 relative'>
                             <ProviderStarRating rating={provider.review_score}></ProviderStarRating>
