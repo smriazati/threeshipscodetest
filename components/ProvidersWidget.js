@@ -36,29 +36,30 @@ const ProviderSearch = ({ providers }) => {
     return (
         <div>
             <div className="mt-4 mb-8">
-                <div className="flex flex-wrap justify-end gap-y-4 space-x-4 px-3">
+                <div className="fixed top-0 bg-white w-full flex flex-wrap justify-end gap-y-4 space-x-4 py-4 px-3">
                     <FilterStarRating selectedStarCount={selectedStarCount} onChange={handleStarCountChange} />
                     <FilterService providers={providers} selectedServices={selectedServices} onChange={handleServiceChange} />
                     <FilterDistance onChange={handleDistanceChange} />
                 </div>
 
             </div>
-
-            {filteredProviders && filteredProviders.length > 0 ? (
-                <div>
-                    <div className="my-4">
-                        <p className='text-center text-gray-500 mb-4'>Showing {filteredProviders.length} provider{filteredProviders.length !== 1 ? 's' : ''}</p>
-                        <ProviderCardList providers={filteredProviders} />
+            <div className="mt-20">
+                {filteredProviders && filteredProviders.length > 0 ? (
+                    <div >
+                        <div className="my-4">
+                            <p className='text-center text-gray-500 mb-4'>Showing {filteredProviders.length} provider{filteredProviders.length !== 1 ? 's' : ''}</p>
+                            <ProviderCardList providers={filteredProviders} />
+                        </div>
                     </div>
-                </div>
-            ) : (
-                <div className='flex flex-col justify-center items-center'>
-                    <p className='mb-2'>No providers available</p>
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded uppercase" onClick={resetFilters}>
-                        Reset filters
-                    </button>
-                </div>
-            )}
+                ) : (
+                    <div className='flex flex-col justify-center items-center'>
+                        <p className='mb-2'>No providers available</p>
+                        <button className="bg-blue-500 text-white px-4 py-2 rounded uppercase" onClick={resetFilters}>
+                            Reset filters
+                        </button>
+                    </div>
+                )}
+            </div>
 
         </div>
     );
