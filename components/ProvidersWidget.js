@@ -1,6 +1,5 @@
-// pages/index.js (or your main component)
 import { useState } from 'react';
-import ProviderList from '../components/ProviderList';
+import ProviderCardList from '../components/provider/CardList';
 import StarRatingFilter from '../components/filters/StarRating';
 import ServiceFilter from '../components/filters/Service';
 import DistanceFilter from '../components/filters/Distance';
@@ -44,7 +43,23 @@ const ProviderSearch = ({ providers }) => {
                 </div>
 
             </div>
-            <ProviderList providers={filteredProviders} onResetFilters={resetFilters} />
+
+            {filteredProviders && filteredProviders.length > 0 ? (
+                <div>
+                    <div className="my-4">
+                        <p className='text-center text-gray-500 mb-4'>Showing {filteredProviders.length} provider{filteredProviders.length !== 1 ? 's' : ''}</p>
+                        <ProviderCardList providers={filteredProviders} />
+                    </div>
+                </div>
+            ) : (
+                <div className='flex flex-col justify-center items-center'>
+                    <p className='mb-2'>No providers available</p>
+                    <button className="bg-blue-500 text-white px-4 py-2 rounded uppercase" onClick={resetFilters}>
+                        Reset filters
+                    </button>
+                </div>
+            )}
+
         </div>
     );
 };

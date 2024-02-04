@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import FilterButton from './Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const DistanceFilter = ({ selectedDistance, onChange }) => {
     const [distance, setDistance] = useState('');

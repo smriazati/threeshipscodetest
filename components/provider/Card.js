@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ProviderStarRating from './ProviderStarRating';
+import ProviderStarRating from './StarRating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationPin, faFire, faCheck, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 

@@ -10,7 +10,6 @@ const StarRatingFilter = ({ selectedStarCount, onChange }) => {
     return (
         <div className="relative">
             <FilterButton onClick={() => setListVisible(!listVisible)} listVisible={listVisible} buttonText={filterButtonText} />
-
             <select
                 value={selectedStarCount || 'all'}
                 onChange={onChange}

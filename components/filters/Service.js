@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import FilterButton from './Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const ServiceFilter = ({ providers, selectedServices, onChange }) => {
     const [listVisible, setListVisible] = useState(false);
@@ -41,9 +39,9 @@ const ServiceFilter = ({ providers, selectedServices, onChange }) => {
                             value={service}
                             checked={selectedServices.includes(service)}
                             onChange={() => handleServiceChange(event)}
-                            className="mr-2"
+                            className="mr-2  hover:cursor-pointer"
                         />
-                        <label htmlFor={service} className="leading-tight">{service}</label>
+                        <label htmlFor={service} className="leading-tight  hover:cursor-pointer">{service}</label>
                     </div>
                 ))}
             </div>

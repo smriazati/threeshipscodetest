@@ -1,8 +1,7 @@
-// pages/index.js
 import { useEffect, useState } from 'react';
 import { fetchData } from '../lib/api';
-import ProviderSearch from '../components/ProviderSearch';
-import LoadingIcon from '../components/LoadingIcon';
+import ProvidersWidget from '../components/ProvidersWidget';
+import LoadingIcon from '../components/icons/Loading';
 
 const Home = () => {
   const [data, setData] = useState(null);
@@ -13,7 +12,6 @@ const Home = () => {
       const result = await fetchData();
       setData(result);
       setLoading(false);
-      console.log('fetchData', result)
     };
 
     fetchDataFromApi();
@@ -25,7 +23,7 @@ const Home = () => {
       {loading ? (
         <LoadingIcon />
       ) : (
-        <ProviderSearch providers={data} />
+        <ProvidersWidget providers={data} />
       )}
     </div>
   );
