@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import ProviderCardList from '../components/provider/CardList';
-import StarRatingFilter from '../components/filters/StarRating';
-import ServiceFilter from '../components/filters/Service';
-import DistanceFilter from '../components/filters/Distance';
+import FilterStarRating from '../components/filter/StarRating';
+import FilterService from '../components/filter/Service';
+import FilterDistance from '../components/filter/Distance';
 
 const ProviderSearch = ({ providers }) => {
     const [selectedStarCount, setSelectedStarCount] = useState(null);
@@ -37,9 +37,9 @@ const ProviderSearch = ({ providers }) => {
         <div>
             <div className="mt-4 mb-8">
                 <div className="flex flex-wrap justify-end gap-y-4 space-x-4 px-3">
-                    <StarRatingFilter selectedStarCount={selectedStarCount} onChange={handleStarCountChange} />
-                    <ServiceFilter providers={providers} selectedServices={selectedServices} onChange={handleServiceChange} />
-                    <DistanceFilter onChange={handleDistanceChange} />
+                    <FilterStarRating selectedStarCount={selectedStarCount} onChange={handleStarCountChange} />
+                    <FilterService providers={providers} selectedServices={selectedServices} onChange={handleServiceChange} />
+                    <FilterDistance onChange={handleDistanceChange} />
                 </div>
 
             </div>
