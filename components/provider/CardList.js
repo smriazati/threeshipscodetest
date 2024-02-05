@@ -1,6 +1,6 @@
 import ProviderCard from './Card';
 
-const ProviderList = ({ providers }) => {
+const ProviderCardList = ({ providers }) => {
     return (
         <ul className="space-y-4 px-4">
             {providers.map((provider) => (
@@ -12,4 +12,4 @@ const ProviderList = ({ providers }) => {
     );
 };
 
-export default ProviderList;
+export default ProviderCardList;

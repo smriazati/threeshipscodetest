@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import FilterButton from './Button';
 
-const ServiceFilter = ({ providers, selectedServices, onChange }) => {
+const FilterService = ({ providers, selectedServices, onChange }) => {
     const [listVisible, setListVisible] = useState(false);
     const allServices = getAllServices(providers);
 
@@ -66,4 +66,4 @@ const getAllServices = (providers) => {
 };
 
 
-export default ServiceFilter;
+export default FilterService;

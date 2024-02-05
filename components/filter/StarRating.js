@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import FilterButton from './Button';
 
-const StarRatingFilter = ({ selectedStarCount, onChange }) => {
+const FilterStarRating = ({ selectedStarCount, onChange }) => {
     const [listVisible, setListVisible] = useState(false);
     const starOptions = [0, 1, 2, 3, 4, 5];
 
@@ -27,4 +27,4 @@ const StarRatingFilter = ({ selectedStarCount, onChange }) => {
     );
 };
 
-export default StarRatingFilter;
+export default FilterStarRating;

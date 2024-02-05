@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import FilterButton from './Button';
 
-const DistanceFilter = ({ selectedDistance, onChange }) => {
+const FilterDistance = ({ selectedDistance, onChange }) => {
     const [distance, setDistance] = useState('');
 
     const handleDistanceChange = (event) => {
@@ -26,4 +26,4 @@ const DistanceFilter = ({ selectedDistance, onChange }) => {
     );
 };
 
-export default DistanceFilter;
+export default FilterDistance;

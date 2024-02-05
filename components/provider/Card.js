@@ -3,7 +3,7 @@ import ProviderStarRating from './StarRating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationPin, faFire, faCheck, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
-const ServiceProvider = ({ provider }) => {
+const ProviderCard = ({ provider }) => {
     const [showTooltip, setShowTooltip] = useState(false);
 
     const isNearby = provider.distance < 5;
@@ -87,4 +87,4 @@ const ServiceProvider = ({ provider }) => {
     );
 };
 
-export default ServiceProvider;
+export default ProviderCard;
